@@ -55,7 +55,7 @@
 
 <body>
 
-    <script type="text/javascript" src="http://data-people.cs.illinois.edu/papers.json"></script>
+    <script type="text/javascript" src="json/papers.json"></script>
 
     <script type="text/javascript" src="display_papers.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -194,22 +194,32 @@
 			
 				<div class="title-para">
 			
-                <h5> In the "big data" era, everyone has access to massive quantities of data, and are struggling to
-          make sense of, and derive value from such data. The state of the art for non-programmers 
-          is to load this data into a 
-          visualization tool, and repeatedly generate visualizations until desired ones are identified.
-          This exploration is <i> painful, tedious, and time-consuming</i>, meaning that the <i>"insight per unit
-          time"</i> is exceedingly low.
+                <h5> In many industrial and academic data analytical applications, huge amount of structured data is stored as wide two-dimension tables in columnar file formats on HDFS. Popular columnar file formats, including RC File, ORC, Parquet and Carbondata, are widely supported in data analytical systems over HDFS such as Hive, Spark, Presto and Impala. </h5>
+                <h5>
+These file formats partition the data into row groups and place data inside a row group in columnar manner. A row group is stored in an HDFS block. This is an efficient way for that it introduces most advantages of column store into Hadoop ecosystem without affecting parallelism, scalability and fault-tolerance.
           </h5>
 
 
                 <h5>
-            What if you could <i> "skip ahead to the insights"</i>?
+            With these file formats, tables on HDFS are becoming very wide, from a few hundred columns to tens of thousands. Wide Table has some important advantages:
+<ul>
+<li>Join Cost Saving: distributed joins are very expensive in HDFS environment. With wide tables, distributed joins are no longer needed.</li>
+<li>Easy Schema Modification: new workloads and new schema requirements are emerging everyday. Adding new fields to a wide table is much easier than redesigning the schema following normal forms.</li>
+<li>Application Friendly: new data features can be added to the table as a set of new fields without interrupting or modifying running applications.</li>
+</ul>
+</h5>
+<h5>
+Although everything looks good having the wide tables stored as columnar formats on HDFS, the I/O efficiency and query performance are far from optimal.
+</h5>
+<h5>
+In an experimental example, given a 400GB, 1187-column table stored as Parquet in a single node HDFS. The read bandwidth of HDFS is 100MB/s. A query took 907 seconds to read 8 columns (0.3% data, i.e. 1.2GB) from the table. While ideally, it should take only 12 seconds.
+</h5>
+<h5>
+Such a huge gap between ideal and reality is caused by disk seeks. The columns read by a query may not be continuous on disk so that seek cost becomes the major part of I/O cost.
           </h5>
 
                 <h5>
-            <b>Rainbow</b> is an ETL tool which ADAPTIVELY improve the I/O performance HDFS column stores. The user can interact with Rainbow to monitor the optimization process in an ETL pipeline, and the data analytical system
-                    will benefit from the optimized layouts produced by Rainbow.
+            <b>Rainbow</b> is an ETL tool which ADAPTIVELY improve the I/O performance HDFS column stores by reducing the disk seek costs. User can interact with Rainbow to monitor the optimization process in an ETL pipeline.
           </h5>
 
           <br/><br/>
@@ -364,7 +374,7 @@
                     <div class="col-md-12">
 					<div class="all-des">
                         <script type="text/javascript">
-                            display_papers(["needletail", "vizinc", "zenvisage-cidr","zenvisage", "vizrec", "seedb", "seedb-demo", "smart-drill-down", "smart-drill-down-demo", "seedb-paper", "intel-sample", "needletail"], true, 10);
+                            display_papers(["columnordering"], true, 10);
                         </script>
 						</div>
                     </div>
