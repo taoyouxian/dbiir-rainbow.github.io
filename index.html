@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,17 +7,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-    <link href='css/googleapis/first.css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='css/googleapis/second.css?family=Cabin+Condensed:400,500,700' rel='stylesheet' type='text/css'>
+    <link href='resources/css/googleapis/first.css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='resources/css/googleapis/second.css?family=Cabin+Condensed:400,500,700' rel='stylesheet' type='text/css'>
     <title>Rainbow</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/googleapis/third.css?family=Alegreya+Sans" rel="stylesheet">
-    <link href='css/googleapis/four.css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='css/googleapis/five.css?family=Alegreya' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="resources/css/googleapis/third.css?family=Alegreya+Sans" rel="stylesheet">
+    <link href='resources/css/googleapis/four.css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='resources/css/googleapis/five.css?family=Alegreya' rel='stylesheet' type='text/css'>
+    <link href="resources/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
-    <link href="css/offcanvas.css" rel="stylesheet">
+    <link href="resources/css/style.css" rel="stylesheet">
+    <link href="resources/css/offcanvas.css" rel="stylesheet">
     <style>
         .carousel {
             background: #2f4350;
@@ -35,13 +35,13 @@
     </style>
 </head>
 <body>
-<script type="text/javascript" src="json/papers.json"></script>
-<script type="text/javascript" src="display_papers.js"></script>
-<script src="css/googleapis/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="resources/json/papers.json"></script>
+<script type="text/javascript" src="resources/js/display_papers.js"></script>
+<script src="resources/css/googleapis/jquery.min.js"></script>
+<script src="resources/js/bootstrap.js"></script>
 
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-    <div class="container">
+    <div class="container" >
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -61,7 +61,7 @@
                 </li>
                 <li><a href="index.html#about">About</a>
                 </li>
-                <li><a href="index.html#usecases">Use Cases</a>
+                <li><a href="index.html#features">Key Features</a>
                 </li>
                 <li><a href="index.html#papers">Papers</a>
                 </li>
@@ -79,12 +79,12 @@
         <br>
         <div class="row">
             <div class="col-md-3">
-                <img src="images/rainbow01cropped.png" class="img-responsive img"
+                <img src="resources/images/rainbow01cropped.png" class="img-responsive img"
                      style="margin-bottom: 10pt; margin-top:10pt;">
             </div>
             <div class="col-md-9">
                 <h2>
-                    <font color="#A52A2A" style="margin-top: 20pt;">A System about Adaptive Layout Optimization for
+                    <font color="#3c8dbc" style="margin-top: 20pt;">A System about Adaptive Layout Optimization for
                         Wide Tables.</font>
                 </h2>
             </div>
@@ -103,16 +103,16 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img-responsive" src="images/screenshot-architecture.png">
+                    <img class="img-responsive" src="resources/images/screenshot-architecture.png">
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="images/screenshot-pipelinelist.png">
+                    <img class="img-responsive" src="resources/images/screenshot-pipelinelist.png">
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="images/screenshot-optimization.png">
+                    <img class="img-responsive" src="resources/images/screenshot-optimization.png">
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="images/screenshot-timeline.png">
+                    <img class="img-responsive" src="resources/images/screenshot-timeline.png">
                 </div>
             </div>
             <!-- Left and right controls -->
@@ -185,68 +185,47 @@
                 <br/><br/>
                 <div class="footer-des">
                     <h5>
-                        <iframe width="560" height="315" src="https://youtu.be/6qaJBPZiHSA" frameborder="0"
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6qaJBPZiHSA" frameborder="0"
                                 allowfullscreen></iframe>
                     </h5>
                 </div>
             </div>
             <a name="about"></a>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="all-title text-center">
-                        <h2> Key Features </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-para">
-                        <h5>
-                            <b> Rainbow </b> enables users to improve the I/O performance of wide tables stored in
-                            columnar formats on HDFS. Here are the key features of Rainbow:
-                        </h5>
-                        <h5>
-                            <ul>
-                                <li><b> Interactive Pipeline Creation Interface. </b>
-                                    Rainbow users can directly Rainbow users can directly create a pipeline.
-                                <li><b> Understandable Visual Comparison Interface. </b> With estimated performance and
-                                    validated performance, the web page shows clearly the different effects of current and
-                                    optimized layout strategy.
-                                <li><b> Adaptively Optimizations. </b> In addition to changing layout strategy for
-                                    current layout, rainbow runs a host of parallel optimization to change the layout
-                                    adaptively for giving workloads the user is currently uploading and presents them as
-                                    optimization layouts.
-                                </li>
-                            </ul>
-                            Rainbow generalizes and extends our prior and technical <b>experiment</b> (see papers).
-                        </h5>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <a name="usecases"></a>
+    <a name="features"></a>
     <div class="row">
         <div class="col-md-12">
             <div class="all-title text-center">
-                <h2> Current Partners</h2>
+                <h2> Key Features </h2>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="title-para">
-
-                <h5> Rainbow is being developed with close collaboration with a number of partners who have large
-                    datasets and a pressing need for data analytical system. Here is a small sample:
+                <h5>
+                    <b> Rainbow </b> enables users to improve the I/O performance of wide tables stored in
+                    columnar formats on HDFS. Here are the key features of Rainbow:
+                </h5>
+                <h5>
                     <ul>
-                        <li><b>ETL. </b> .
-                        </li>
-                        <li><b>Benchmark Generation. </b> .
-                        <li><b>Column Ordering Analysis. </b> .
+                        <li><b> Interactive Pipeline Creation Interface. </b>
+                            Rainbow users can directly Rainbow users can directly create a pipeline.
+                        <li><b> Understandable Visual Comparison Interface. </b> With estimated performance and
+                            validated performance, the web page shows clearly the different effects of current and
+                            optimized layout strategy.
+                        <li><b> Adaptively Optimizations. </b> In addition to changing layout strategy for
+                            current layout, rainbow runs a host of parallel optimization to change the layout
+                            adaptively for giving workloads the user is currently uploading and presents them as
+                            optimization layouts.
                         </li>
                     </ul>
+                    Rainbow generalizes and extends our prior and technical <b>experiment</b> (see papers).
                 </h5>
             </div>
         </div>
     </div>
-    <a name="releases"></a>
     <div class="row">
         <div class="col-md-12">
             <div class="all-title text-center">
@@ -268,7 +247,6 @@
         <div class="col-md-12">
             <div class="all-title text-center">
                 <h2> Papers </h2>
-
             </div>
         </div>
     </div>
@@ -290,16 +268,16 @@
                 <h2> Contact Us </h2>
             </div>
             <div class="all-des">
-                <h5> Rainbow is being developed by a team of undergraduate and graduate students headed by Prof. <a
-                        href="http://iir.ruc.edu.cn/~ygchen/">Yueguo Chen</a>, along with a number of collaborators,
-                    including Prof. Xiaoyong Du. The list of contributors includes: Guodong Jin, Youxian Tao. There are
-                    other students working on related projects: Yixuan Wang.
+                <h5> For feedback and questions, feel free to email us:
                 </h5>
                 <h5>
-                    Please reach out to the lead PhD Candidate, <a href="http://iir.ruc.edu.cn/~bianh/">Haoqiong
-                    Bian</a>
-                    (bianhaoqiong@gmail.com) if you'd like to either contribute, or be
-                    a beta tester of Rainbow! </h5>
+                    <ul>
+                        <li><a href="http://iir.ruc.edu.cn/~bianh/">Haoqiong Bian</a> bianhaoqiong@gmail.com</li>
+                        <li><a href="http://iir.ruc.edu.cn/~guodong/index.html">Guodong Jin</a> jelly.guodong.jin@gmail.com</li>
+                        <li><b>Youxian Tao</b> taoyouxian@edu.ruc.cn</li>
+                    </ul>
+                </h5>
+                <h5>Welcome to contribute and submit pull requests :) (<a href="https://github.com/dbiir/rainbow">View on GitHub</a>)</h5>
             </div>
         </div>
     </div>
@@ -317,7 +295,7 @@
 <!--/.container-->
 <!-- Bootstrap core JavaScript -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jQuery-2.1.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="resources/js/jQuery-2.1.3.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>
